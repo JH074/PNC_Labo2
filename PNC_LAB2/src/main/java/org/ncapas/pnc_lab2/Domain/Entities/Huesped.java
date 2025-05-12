@@ -13,29 +13,15 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 
-public class Reservacion {
+public class Huesped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idReservacion;
+    private UUID idHuesped;
 
     @ManyToOne
     @JoinColumn(name = "id_habitacion", nullable = false,
     foreignKey = @ForeignKey(name = "FK_habitacion"))
     private Habitacion habitacion;
-
-    @ManyToOne
-    @JoinColumn(name = "id_huesped", nullable = false,
-    foreignKey = @ForeignKey(name = "FK_huesped"))
-    private Huesped huesped;
-
-
-    @Column
-    private LocalTime hora_entrada;
-    @Column
-    private LocalTime hora_salida;
-    @Column
-    private String estado;
-
 
 }
