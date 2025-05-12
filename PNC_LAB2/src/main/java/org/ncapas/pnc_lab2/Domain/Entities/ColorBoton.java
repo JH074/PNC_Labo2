@@ -18,7 +18,9 @@ public class ColorBoton {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idColorBoton;
 
+    @Column
     private String codigo;
 
+    @Column
     private String nombre;
 }

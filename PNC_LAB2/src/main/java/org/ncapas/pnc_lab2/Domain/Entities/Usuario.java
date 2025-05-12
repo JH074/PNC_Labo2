@@ -12,15 +12,21 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Departamento {
+@Table(name = "usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idDepartamento;
+    private UUID idUsuario;
 
     @Column
-    private String codigo;
+    private String correo;
 
     @Column
-    private String nombre;
+    private String contrasena;
+
+    @ManyToOne
+    @JoinColumn(name = "id_rol", nullable = false, foreignKey = @ForeignKey(name = "FK_usuario_rol"))
+    private Rol rol;
+
 }

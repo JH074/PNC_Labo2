@@ -18,7 +18,9 @@ public class Sucursal {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idSucursal;
 
+    @Column
     private String nombre;
 
+    @Column
     private String ubicacion;
 }

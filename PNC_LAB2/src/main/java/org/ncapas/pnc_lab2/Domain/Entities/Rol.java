@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-
+import java.util.List;
 
 @Entity
 @Data
@@ -15,11 +14,16 @@ import java.util.UUID;
 public class Rol {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idRol;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idRol;
 
+    @Column
     private String codigo;
 
+    @Column
     private String nombre;
+
+    @OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
 
 }
