@@ -5,22 +5,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.UUID;
+
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Rol {
+public class ColorBoton {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idRol;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID idColorBoton;
 
     @Column
     private String codigo;
 
     @Column
     private String nombre;
-
 }
