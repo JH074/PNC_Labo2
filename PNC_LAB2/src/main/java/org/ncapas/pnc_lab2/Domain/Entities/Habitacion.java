@@ -11,20 +11,21 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 
-public class Comprobante {
+public class Habitacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idComprobante;
+    private UUID idHabitacion;
 
     @ManyToOne
-    @JoinColumn(name = "id_reservacion", nullable = false,
-    foreignKey = @ForeignKey(name = "FK_reservacion"))
-
+    @JoinColumn(name = "id_tipo_habitacion", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_tipo_habitacion"))
+    private TipoHabitacion tipoHabitacion;
 
     @Column
-    private String fecha;
+    private String nombre;
     @Column
-    private String montocobro;
+    private String capacidad;
+
 
 }
