@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -20,10 +22,10 @@ public class Comprobante {
     @ManyToOne
     @JoinColumn(name = "id_reservacion", nullable = false,
     foreignKey = @ForeignKey(name = "FK_reservacion"))
-
+    private Reservacion reservacion;
 
     @Column
-    private String fecha;
+    private LocalDate fecha;
     @Column
     private String montocobro;
 
