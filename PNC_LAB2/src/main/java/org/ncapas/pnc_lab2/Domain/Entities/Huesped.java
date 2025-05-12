@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalTime;
 import java.util.UUID;
 
 @Data
@@ -20,8 +18,8 @@ public class Huesped {
     private UUID idHuesped;
 
     @ManyToOne
-    @JoinColumn(name = "id_habitacion", nullable = false,
-    foreignKey = @ForeignKey(name = "FK_habitacion"))
-    private Habitacion habitacion;
+    @JoinColumn(name = "id_regalia", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_regalia"))
+    private Regalia regalia;
 
 }
