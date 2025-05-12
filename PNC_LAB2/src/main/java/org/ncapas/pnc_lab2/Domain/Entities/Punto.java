@@ -19,9 +19,9 @@ public class Punto {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idPuntos;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "id_huesped", nullable = false, foreignKey = @ForeignKey(name = "FK_punto_huesped"))
-    private Huesped huesped;*/
+    private Huesped huesped;
 
     @ManyToOne
     @JoinColumn(name = "id_empleado", nullable = false, foreignKey = @ForeignKey(name = "FK_punto_empleado"))

@@ -22,4 +22,12 @@ public class Huesped {
     foreignKey = @ForeignKey(name = "FK_regalia"))
     private Regalia regalia;
 
+    @ManyToOne
+    @JoinColumn(name = "id_persona", nullable = false,
+            foreignKey = @ForeignKey(name = "FK_persona"))
+    private Persona persona;
+
+
+
+
 }
