@@ -25,6 +25,11 @@ public class ExpedienteReparacion {
     foreignKey = @ForeignKey(name = "FK_habitacion"))
     private Habitacion habitacion;
 
+    @ManyToOne
+    @JoinColumn(name = "id_empleado", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_empleado"))
+    private Empleado empleado;
+
     @Column
     private LocalDate fecha;
     @Column

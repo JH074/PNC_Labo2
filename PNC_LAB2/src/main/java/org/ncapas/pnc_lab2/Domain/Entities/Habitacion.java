@@ -22,6 +22,11 @@ public class Habitacion {
     foreignKey = @ForeignKey(name = "FK_tipo_habitacion"))
     private TipoHabitacion tipoHabitacion;
 
+    @ManyToOne
+    @JoinColumn(name = "id_piso", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_piso"))
+    private Piso piso;
+
     @Column
     private String nombre;
     @Column

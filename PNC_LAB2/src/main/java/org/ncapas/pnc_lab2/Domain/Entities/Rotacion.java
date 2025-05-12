@@ -24,6 +24,16 @@ public class Rotacion {
     foreignKey = @ForeignKey(name = "FK_jornada"))
     private Jornada jornada;
 
+    @ManyToOne
+    @JoinColumn(name = "id_empleado", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_empleado"))
+    private Empleado empleado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_piso", nullable = false,
+    foreignKey = @ForeignKey(name = "FK_piso"))
+    private Piso piso;
+
     @Column
     private LocalTime hora_inicio;
     @Column
