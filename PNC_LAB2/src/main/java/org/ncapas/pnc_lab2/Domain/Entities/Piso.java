@@ -18,7 +18,7 @@ public class Piso {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID idPiso;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_color_boton", nullable = false, foreignKey = @ForeignKey(name = "FK_piso_color_boton"))
     private ColorBoton colorBoton;
 
