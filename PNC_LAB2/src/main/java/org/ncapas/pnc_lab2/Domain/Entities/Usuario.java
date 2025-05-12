@@ -26,7 +26,7 @@ public class Usuario {
     private String contrasena;
 
     @ManyToOne
-    @JoinColumn(name = "id_rol", nullable = false, foreignKey = @ForeignKey(name = "FK_usuario_rol"))
+    @JoinColumn(name = "id_rol", nullable = false, foreignKey = @ForeignKey(name = "FK_usuario_persona"))
     private Rol rol;
 
 }

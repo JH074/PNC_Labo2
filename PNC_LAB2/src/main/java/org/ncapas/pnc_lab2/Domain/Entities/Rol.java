@@ -23,7 +23,4 @@ public class Rol {
     @Column
     private String nombre;
 
-    @OneToMany(mappedBy = "rol")
-    private List<Usuario> usuarios;
-
 }
