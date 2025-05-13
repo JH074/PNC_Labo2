@@ -14,7 +14,7 @@ public interface iUsuarioRepository extends iGenericRepository<Usuario, UUID> {
 
     //Query nativa
     @Query(nativeQuery = true, value = "SELECT id_usuario FROM usuario WHERE id_usuario = :id_usuario")
-    String findIdUsuarioByIdNative(@Param("idUsuario") UUID idUsuario);
+    public Usuario findIdUsuarioByIdNative(@Param("idUsuario") UUID idUsuario);
 
     //Query derivada
     @Query("SELECT c FROM Usuario c WHERE c.correo = :correo")
