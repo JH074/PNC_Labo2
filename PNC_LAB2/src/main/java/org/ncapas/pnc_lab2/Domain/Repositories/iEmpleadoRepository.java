@@ -9,14 +9,14 @@ import java.util.UUID;
 
 public interface iEmpleadoRepository extends iGenericRepository<Empleado, UUID> {
 
-    // Función JPA (basada en nombre del campo)
-    Empleado findByIdEmpleado(UUID idEmpleado);
+    // Función JPA
+    public Empleado findByIdEmpleado(UUID idEmpleado);
 
-    // Query nativa (extraer el ID de persona vinculado a un empleado)
+    // Query nativa
     @Query(nativeQuery = true, value = "SELECT id_persona FROM empleado WHERE id_empleado = :idEmpleado")
-    UUID findIdPersonaByEmpleadoNative(@Param("idEmpleado") UUID idEmpleado);
+    public UUID findIdPersonaByEmpleadoNative(@Param("idEmpleado") UUID idEmpleado);
 
-    // Query derivada (buscar empleados por sucursal)
+    // Query derivada
     @Query("SELECT e FROM Empleado e WHERE e.sucursal.idSucursal = :idSucursal")
     List<Empleado> findBySucursal(@Param("idSucursal") UUID idSucursal);
 }
