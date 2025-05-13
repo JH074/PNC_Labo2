@@ -13,7 +13,7 @@ public interface iOrnamentoRepository extends iGenericRepository<Ornamento, UUID
 
     //Query nativa
     @Query(nativeQuery = true, value = "SELECT nombre FROM ornamento WHERE id_ornamento = :idOrnamento")
-    public Ornamento findNombreByIdNative(@Param("idOrnamento") UUID idOrnamento);
+    public String findNombreByIdNative(@Param("idOrnamento") UUID idOrnamento);
 
     //Query derivada
     @Query("SELECT c FROM Ornamento c WHERE c.codigo = :ornamento")
