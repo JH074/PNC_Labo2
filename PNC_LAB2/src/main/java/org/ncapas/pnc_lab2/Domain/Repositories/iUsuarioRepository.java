@@ -9,5 +9,15 @@ import java.util.UUID;
 
 public interface iUsuarioRepository extends iGenericRepository<Usuario, UUID> {
 
-    
+    //Funcion JPA
+    public Usuario findByIdUsuario (UUID idUsuario);
+
+    //Query nativa
+    @Query(nativeQuery = true, value = "SELECT id_usuario FROM usuario WHERE id_usuario = :id_usuario")
+    public Usuario findIdUsuarioByIdNative(@Param("idUsuario") UUID idUsuario);
+
+    //Query derivada
+    @Query("SELECT c FROM Usuario c WHERE c.correo = :correo")
+    Usuario findUsuarioByCorreo(@Param("correo") Usuario correo);
+
 }

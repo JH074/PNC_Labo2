@@ -11,9 +11,9 @@ public interface iRolRepository extends iGenericRepository<Rol, Integer> {
 
     //Query nativa
     @Query(nativeQuery = true, value = "SELECT nombre FROM rol WHERE id_rol = :idRol")
-    String findNombreByIdNative(@Param("idRol") Integer idRol);
+    public Rol findNombreByIdNative(@Param("idRol") Integer idRol);
 
     //Query derivada
     @Query("SELECT r FROM Rol r WHERE r.codigo = :codigo")
-    Rol findRolByCodigo(@Param("codigo") String codigo);
+    public Rol findRolByCodigo(@Param("codigo") String codigo);
 }
